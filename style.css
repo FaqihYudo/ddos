@@ -1,0 +1,431 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: rgb(38, 38, 38);
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+}
+
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.NavBar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    max-height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 0 10px black, 0 0 15px black;
+    animation: ShowNavbar 0.5s ease-in-out;
+}
+
+@keyframes ShowNavbar {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-left: 5px;
+    flex: 1.5;
+}
+
+.logo a img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logo a img:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    box-shadow: 0 0 15px whitesmoke; 
+    border-radius: 50%;
+}
+
+.Title{
+    flex: 4;
+}
+
+.Menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 10px;
+    text-align: center;
+    flex: 6.5;
+}
+
+.Menu a{
+    font-size: 15px;
+    text-decoration: none;
+    list-style: none;
+    padding: 0 5px;
+    color: white;
+}
+
+.Menu a p{
+    color: black;
+    background-color:  white;
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.Menu a p:hover{
+    color: black;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 10px;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px whitesmoke; 
+}
+
+.buttonTop {
+    width: 40px;
+    height: 40px;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    padding: 5px;
+    cursor: pointer;
+
+    transform: translateY(100px);
+    opacity: 0;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.buttonTop.slideIn {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.buttonTop:hover{
+    color: white;
+    background-color: black;
+}
+
+
+
+/* Styling that was previously inline */
+.Title p {
+    color: white; 
+    font-size: 23px; 
+    text-shadow: 0 0 5px whitesmoke, 0 0 15px whitesmoke, 0 0 25px whitesmoke; 
+    font-weight: 800;
+    margin: 0;
+    text-align: center;
+}
+
+/* Safe area padding for body and MainContainer */
+body {
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+.MainContainer {
+    margin-top: 50px;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    transition: transform 1s ease-in-out;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(400px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.Content {
+    text-align: center;
+    color: white;
+    background-color: rgb(34, 34, 34);
+    width: 95%;
+    height: auto;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+
+.section {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.linePage{
+    margin-bottom: 50px;
+}
+
+.text{
+    font-size: 20px;
+}
+
+hr {
+    border: 3px solid black;
+    margin: 15px 0;
+}
+
+.nameClass {
+    font-size: 40px;
+    font-weight: 800;
+    margin: 0;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    animation: colortext 5s linear infinite;
+}
+
+@keyframes colortext{
+    0% {
+        color: black;
+    }
+    25% {
+        color: grey;
+    }
+    50% {
+        color: white;
+    }
+    75% {
+        color: grey;
+    }
+    100% {
+        color: black;
+    }
+}
+
+/* Hamburger menu styles */
+.menu-toggle {
+    display: none;
+}
+
+.hamburger {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loginForm{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginFormInput{
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    width: 125%;
+}
+
+.loginFormButton{
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    width: 100%;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    transition: all 0.2s ease-in-out;
+}
+
+.loginFormButton:hover{
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px whitesmoke; 
+}
+
+.learnThings {
+    background-color: whitesmoke;
+    border-radius: 25px;
+    padding: 10px 0;
+    color: black;
+}
+
+.projectsContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.projectLeftImage img, .projectRightImage img{
+    height: 200px;
+    width: auto;
+    border-radius: 10px;
+}
+
+/* 
+   Media Queries for Responsiveness
+   Supported Devices & Widths:
+   - Extra Large Displays (Laptops, Macs): 1280px
+   - Large Tablets & iPad Pro (Portrait/Landscape): 1024px, 912px
+   - Tablets & Small Laptops: 853px, 820px, 768px
+   - Large Phones & Foldables: 540px, 440px, 430px
+   - Standard & Small Phones: 414px, 412px, 390px, 375px
+   - Extra Small & Narrow Foldables: 360px, 344px
+*/
+
+/* 1. Laptops and Large Tablets Landscape (max 1280px) */
+@media screen and (max-width: 1280px) {
+    .Menu a { font-size: 14px; }
+}
+
+@media screen and (max-width: 1200px) {
+    .projectsContainer{
+    grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 2. Tablets & Portrait Laptops (max 1080px) - Hamburger Menu triggers here */
+@media screen and (max-width: 1080px) {
+    .NavBar {
+        max-height: none;
+        flex-wrap: wrap;
+        padding-top: max(10px, env(safe-area-inset-top)); 
+    }
+    .logo { flex: 0 0 auto; }
+    .Title {
+        flex: 1 1 auto;
+        text-align: left;
+        padding-left: 10px;
+    }
+    .Title p {
+        font-size: 20px;
+        text-align: left;
+    }
+    .hamburger {
+        display: block;
+        flex: 0 0 auto;
+        margin-right: max(15px, env(safe-area-inset-right));
+    }
+    .Menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: black;
+        padding: 10px 0;
+        margin-right: 0;
+        flex: 0 0 100%;
+    }
+    .menu-toggle:checked ~ .Menu { display: flex; }
+    .Menu a {
+        width: 95%;
+        text-align: center;
+        padding: 10px 0;
+        font-size: 16px;
+    }
+    .Menu a p { margin: 5px 20px; padding: 12px; }
+    .projectsContainer{
+    grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* 3. Medium Tablets & Large Foldables (max 853px & 820px & 768px) */
+@media screen and (max-width: 853px) {
+    .Title p { font-size: 18px; }
+    .logo a img { width: 45px; height: 45px; }
+    .projectLeftImage img, .projectRightImage img{
+        height: 175px;
+    }
+}
+
+/* 4. Large Phones (max 540px) */
+@media screen and (max-width: 540px) {
+    .logo a img { width: 40px; height: 40px; }
+    .Title p { font-size: 16px; }
+    .hamburger { font-size: 25px; }
+    .projectLeftImage img, .projectRightImage img{
+        height: 150px;
+    }
+}
+
+/* 5. Standard Phones (max 440px & 430px & 414px & 412px & 390px & 375px) */
+@media screen and (max-width: 440px) {
+    .Title p { font-size: 15px; }
+    .logo { gap: 10px; }
+    .Menu a p { margin: 5px 15px; padding: 10px; font-size: 14px; }
+}
+
+/* 6. Small Phones & Narrow Foldables (max 360px & 344px) */
+@media screen and (max-width: 360px) {
+    .logo { gap: 5px; }
+    .logo a img { width: 35px; height: 35px; }
+    .Title p { font-size: 13px; }
+    .hamburger { font-size: 22px; margin-right: max(10px, env(safe-area-inset-right)); }
+}
+
+/* Super Narrow Devices (max 344px) */
+@media screen and (max-width: 344px) {
+    .Title p { font-size: 12px; }
+    .logo a img { width: 30px; height: 30px; }
+}
